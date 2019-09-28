@@ -17,7 +17,7 @@ pip3 install -r requirements.txt
 
 # Train the model
 
-- Run the script that train the model
+- Run the script that trains the model
 
 ```bash
 source env/bin/activate
