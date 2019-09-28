@@ -23,3 +23,14 @@ pip3 install -r requirements.txt
 source env/bin/activate
 python train_model.py
 ```
+
+# Load the model inside a Python script
+
+- Add these lines to your Python script
+
+```python
+from keras.models import load_model
+
+model = load_model('model.h5')
+model.summary()
+```
