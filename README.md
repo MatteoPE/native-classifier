@@ -1,5 +1,9 @@
 # NativeClassifier
 
+## Information about the dataset 
+
+https://www.kaggle.com/hazrat/urdu-speech-dataset
+
 ## Requirements
 
 - Create a virtual environment
