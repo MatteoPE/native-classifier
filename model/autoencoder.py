@@ -39,7 +39,7 @@ class SimpleAutoencoder:
                                  validation_data=(X_val, y_val))
 
         if save:
-            self.model.save('model.h5')
+            self.model.save('autoencoder.h5')
 
     def predict(self, X):
         return self.model.predict(X)
