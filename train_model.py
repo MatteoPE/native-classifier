@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 from mfcc.wav2mfcc import Wav2Mfcc
-from model.lstm_models import LstmV1
+from model.native_classifier import NativeClassifierLSTM
 
 if __name__ == '__main__':
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     n_hidden = 64
     n_output = 2
 
-    model = LstmV1(n_input, n_hidden, n_output)
+    model = NativeClassifierLSTM(n_input, n_hidden, n_output)
 
     X_train_NN = X_train
     X_test_NN = X_test

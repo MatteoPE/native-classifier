@@ -7,7 +7,7 @@ from time import time
 from keras.callbacks import TensorBoard
 
 
-class LstmV1:
+class NativeClassifierLSTM:
 
     def __init__(self, n_input, n_hidden, n_output):
         self.n_input = n_input
