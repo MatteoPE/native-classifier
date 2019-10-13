@@ -32,10 +32,10 @@ class Wav2Mfcc:
                 # e.g. 49+6000 = 6049
                 end_idx = start_idx + self.wav_data_size
                 X_data.append(wav_data[start_idx:end_idx])
-                target = subdir.replace((self.data_path + "/"), "")
+                #target = subdir.replace((self.data_path + "/"), "")
                 # true for native ('Y'), false for non-native ('N')
-                y_data.append(target[3] == 'Y')
-        return X_data, y_data
+                #y_data.append(target[3] == 'Y')
+        return X_data #, y_data
 
     def mfcc_feature_extraction(self, data):
         vectorized_data = []

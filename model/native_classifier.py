@@ -33,11 +33,13 @@ class NativeClassifierLSTM:
 
         return model
 
-    def fit(self, X_train, y_train, X_val, y_val, batch_size, num_epochs, save=True):
+    def fit(self, X_train, y_train, X_val, y_val, batch_size, num_epochs, model_name, save=True):
         history = self.model.fit(X_train, y_train,
                                  batch_size=batch_size, epochs=num_epochs,
                                  verbose=1,
                                  validation_data=(X_val, y_val))
 
         if save:
-            self.model.save('model.h5')
+            #Modified for reuseability
+            #self.model.save('model.h5')
+            self.model.save(model_name)
