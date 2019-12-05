@@ -1,7 +1,7 @@
 
-# NativeClassifier
 
-## Project Structure
+Project Folder Details 
+----------------------------------------------------------------------------------------------------------------------------------------
 
 dataset_wav --- Corpus contains audio .wav files of spoken urdu words
 
@@ -25,42 +25,10 @@ train_model.py --- train model using MFCCs extracted using python librosa
 
 train_model_librosa.py --- train model using MFCCs extracted using librosa java implementation
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
-## Information about the dataset 
+Note: 
 
-https://www.kaggle.com/hazrat/urdu-speech-dataset
+add instructions to run RMSE code
 
-## Requirements
 
-- Create a virtual environment
-
-```bash
-virtualenv env
-```
-
-- Install all the requirements in the virtual environment
-
-```bash
-source env/bin/activate
-pip3 install -r requirements.txt
-```
-
-# Train the model
-
-- Run the script that trains the model
-
-```bash
-source env/bin/activate
-python train_model.py
-```
-
-# Load the model inside a Python script
-
-- Add these lines to your Python script
-
-```python
-from keras.models import load_model
-
-model = load_model('model.h5')
-model.summary()
-```
