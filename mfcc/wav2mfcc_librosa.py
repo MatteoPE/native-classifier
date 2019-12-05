@@ -18,6 +18,7 @@ class Wav2MfccLibrosa:
         for d in data:
             mfcc_librosa = mfcc(d, sr=self.sample_rate, n_mfcc=self.num_features, hop_length=hop_length,
                                 win_length=win_length)
+            # mfcc_librosa = mfcc(d, sr=self.sample_rate, n_mfcc=self.num_features)
             mfcc_f = np.transpose(mfcc_librosa)
             delta_f = delta(mfcc_f, 8)
             v_d = np.append(mfcc_f, delta_f, axis=1)
