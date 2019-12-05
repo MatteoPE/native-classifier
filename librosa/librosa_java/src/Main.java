@@ -3,6 +3,8 @@ import Wav.WavFileException;
 import mfcc.MFCC;
 
 import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,8 +13,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException, WavFileException {
 
-        String wav_folder = "/home/maria/Desktop/Flavio Repo/Computer Security Project/Project/nativeclassifier/dataset_wav";
-
+        Path currentPath = Paths.get("");
+        String wav_folder = Paths.get(
+                currentPath.toAbsolutePath().getParent().getParent().toString(),
+                "dataset_wav")
+                .toString();
         File directory = new File(wav_folder);
 
         FileFilter directoryFileFilter = new FileFilter() {
@@ -51,7 +56,12 @@ public class Main {
                 File _file = new File(feature_file_path);
                 BufferedWriter writer = new BufferedWriter(new FileWriter(_file.getAbsolutePath()));
 
-                writer.write(Arrays.toString(mfcc_feature));
+                writer.write(
+                        Arrays.toString(mfcc_feature)
+                                .replace(",", "")
+                                .replace("[", "")
+                                .replace("]", ""));
+                System.out.println(file.getPath() + " " + mfcc_feature.length);
                 writer.close();
 
                 }
