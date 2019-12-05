@@ -46,6 +46,8 @@ def load_librosa_data(java_path, wav_path):
 if __name__ == "__main__":
     java_path = os.path.join(os.path.dirname(os.getcwd()), "dataset_java_feature")
     wav_path = os.path.join(os.path.dirname(os.getcwd()), "dataset_wav")
+    print(java_path)
+    print(wav_path)
     librosa_data, java_data = load_librosa_data(java_path, wav_path)
 
     rmse_array = []
@@ -59,5 +61,5 @@ if __name__ == "__main__":
              cumulative=True)
     plt.xlabel("Root-Mean-Square Error")
     plt.ylabel("Density")
-    plt.title("Cumulative Distribution of the Root-Mean-Square Error of the two librosa implementation")
+    plt.title("Cumulative Distribution of the Root-Mean-Square Error of the two librosa implementations")
     plt.show()

@@ -16,9 +16,10 @@ def get_target_index(classification_vaiable):
         index = 3
     elif classification_vaiable == 'G':
         index = 2
-    return  index
+    return index
 
-def get_y_data(index,data_path,y_data):
+
+def get_y_data(index, data_path, y_data):
     for subdir, dirs, files in os.walk(data_path):
         print(subdir)
         for file in files:
@@ -44,15 +45,17 @@ def train_model(classifier, model_name):
     num_wnd = 1 + ((duration - wnd_len) / wnd_step)
     num_features = 26
 
-    feature_extraction = Wav2Mfcc(data_path, wav_data_size, sample_rate, wnd_len, wnd_step, num_features, num_wnd)
+    feature_extraction = Wav2Mfcc(
+        data_path, wav_data_size, sample_rate, wnd_len, wnd_step, num_features, num_wnd)
 
     # Modified for reusesability
     # X_data_wav, y_data = feature_extraction.load_data()
     X_data_wav = feature_extraction.load_data()
 
-    #get classification variables
+    # get classification variables
     y_data = []
-    index = get_target_index(classifier) # get filename index for classfication variable
+    # get filename index for classfication variable
+    index = get_target_index(classifier)
     y_data = get_y_data(index, data_path, y_data)
 
     X_data_mfcc = feature_extraction.mfcc_delta_feature_extraction(X_data_wav)
@@ -76,7 +79,6 @@ def train_model(classifier, model_name):
     model = None
     model = NativeClassifierLSTM(n_input, n_hidden, n_output)
 
-
     X_train_NN = X_train
     X_test_NN = X_test
 
@@ -95,9 +97,10 @@ def train_model(classifier, model_name):
     if classifier == 'G':
         num_epochs = 19
 
-    #Modified for reusability
+    # Modified for reusability
     #model.fit(X_train_NN, y_train_NN, X_val_NN, y_val_NN, batch_size, num_epochs)
-    model.fit(X_train_NN, y_train_NN, X_val_NN, y_val_NN, batch_size, num_epochs, model_name)
+    model.fit(X_train_NN, y_train_NN, X_val_NN, y_val_NN,
+              batch_size, num_epochs, model_name)
 
 
 if __name__ == '__main__':
@@ -105,8 +108,8 @@ if __name__ == '__main__':
     native_classifier = 'N'
     gender_classifier = 'G'
 
-    #Train Native Classifier
-    train_model(native_classifier,'native_model.h5')
+    # Train Native Classifier
+    train_model(native_classifier, 'native_model.h5')
 
     # Train Gender Classifier
     train_model(gender_classifier, 'gender_model.h5')
