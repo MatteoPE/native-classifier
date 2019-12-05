@@ -48,10 +48,16 @@ if __name__ == "__main__":
     wav_path = os.path.join(os.path.dirname(os.getcwd()), "dataset_wav")
     librosa_data, java_data = load_librosa_data(java_path, wav_path)
 
-    rmes_array = []
+    rmse_array = []
     for i in range(len(librosa_data[0])):
         rmse_val = rmse(np.array(librosa_data[i]), np.array(java_data[i]))
-        rmes_array.append(rmse_val)
-    n_bins = 20
-    plt.hist(rmes_array, bins=n_bins)
+        rmse_array.append(rmse_val)
+    n_bins = 50
+    plt.hist(rmse_array, bins=n_bins,
+             range=(np.min(rmse_array),0.000007),
+             density=True,
+             cumulative=True)
+    plt.xlabel("Root-Mean-Square Error")
+    plt.ylabel("Density")
+    plt.title("Cumulative Distribution of the Root-Mean-Square Error of the two librosa implementation")
     plt.show()
