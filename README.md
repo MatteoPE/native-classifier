@@ -15,6 +15,8 @@ mfcc --- Code for extracting features using python_speech_features library (wav2
 
 model --- Contains code for LSTM Model for classification of native and non-native speakers (native_classifier.py)
 
+compare --- Contains code to compare MFCCs generated from python librosa and java librosa using RMSE aand generate graph for visualization
+
 Others --- Contains potential code for feature extraction using java (eg. OpenIMAJ library) from other different libraries that were tried in the study.
 
 utilities --- Creating Wav audio object in python ( data_loader.py )
