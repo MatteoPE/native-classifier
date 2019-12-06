@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "119846748159",
+    "firebase_url": "https://c7f13218.firebaseio.com",
+    "project_id": "c7f13218",
+    "storage_bucket": "c7f13218.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119846748159:android:f3740e77b33d3d0f7171ca",
+        "android_client_info": {
+          "package_name": "com.example.seeingisbelieving"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119846748159-4689m7a22ithmhb9tqashudb72ja8pmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ZuQt0p501l_17ZejOtlkeXUrsAY_v08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119846748159-4689m7a22ithmhb9tqashudb72ja8pmv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
