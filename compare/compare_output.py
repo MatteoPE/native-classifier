@@ -61,5 +61,4 @@ if __name__ == "__main__":
              cumulative=True)
     plt.xlabel("Root-Mean-Square Error")
     plt.ylabel("Density")
-    plt.title("Cumulative Distribution of the Root-Mean-Square Error of the two librosa implementations")
     plt.show()
